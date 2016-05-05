@@ -11,7 +11,7 @@
 (function (window) {
   "use strict";
 
-  var ahoy = window.chaperoneAnalytics || window.ChaperoneAnalytics || {};
+  var ahoy = window.ahoy || window.Ahoy || {};
   var $ = window.jQuery || window.Zepto || window.$;
   var visitId, visitorId, track;
   var visitTtl = 4 * 60; // 4 hours
@@ -284,5 +284,5 @@
     trackEvent(eventQueue[i]);
   }
 
-  window.chaperoneAnalytics = ahoy;
+  window.ahoy = ahoy;
 }(window));
