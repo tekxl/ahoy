@@ -82,6 +82,8 @@ module Ahoy
     end
 
     def user
+      p "ahoy user"
+      p @store.user
       @user ||= @store.user
     end
 
