@@ -82,6 +82,8 @@ module Ahoy
     end
 
     def user
+      p "darex call"
+      p @store.user
       @user ||= @store.user
     end
 
