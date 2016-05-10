@@ -61,8 +61,8 @@ module Ahoy
 
       def visit_number
         p "visit_number"
-        p user
-        visit_model.where("user_id = ?", user.id).count
+        p visit
+        visit_model.where("user_id = ?", visit.user_id).count
       end
 
       def exclude?
