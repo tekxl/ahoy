@@ -4,6 +4,8 @@ module Ahoy
 
     def initialize(options = {})
       @store = Ahoy::Store.new(options.merge(ahoy: self))
+      p "tracker"
+      p @store
       @controller = options[:controller]
       @request = options[:request] || @controller.try(:request)
       @options = options
@@ -82,8 +84,6 @@ module Ahoy
     end
 
     def user
-      p "ahoy user"
-      p @store.user
       @user ||= @store.user
     end
 

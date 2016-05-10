@@ -2,6 +2,7 @@ module Ahoy
   module Stores
     class ActiveRecordTokenStore < BaseStore
       def track_visit(options, &block)
+        p "track_visit"
         visit =
           visit_model.new do |v|
             v.visit_token = ahoy.visit_token
@@ -57,6 +58,15 @@ module Ahoy
 
       def visit
         @visit ||= visit_model.where(visit_token: ahoy.visit_token).first if ahoy.visit_token
+      end
+
+      def visit_number
+        p "visit_number"
+        begin
+          visit_model.where("user_id = ?", user.id).count
+        rescue
+          0
+        end
       end
 
       def exclude?

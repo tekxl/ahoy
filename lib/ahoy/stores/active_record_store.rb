@@ -2,8 +2,6 @@ module Ahoy
   module Stores
     class ActiveRecordStore < BaseStore
       def track_visit(options, &block)
-        p "darex ahoy track"
-        p visit_number
         visit =
           visit_model.new do |v|
             v.id = ahoy.visit_id
@@ -49,7 +47,6 @@ module Ahoy
       end
 
       def visit_number
-        p "darex ahoy visit_number"
         begin
           visit_model.where(user_id: user.id).count
         rescue
