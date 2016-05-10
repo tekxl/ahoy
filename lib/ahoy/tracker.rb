@@ -5,7 +5,6 @@ module Ahoy
     def initialize(options = {})
       @store = Ahoy::Store.new(options.merge(ahoy: self))
       p "tracker"
-      p @store
       @controller = options[:controller]
       @request = options[:request] || @controller.try(:request)
       @options = options
@@ -85,6 +84,10 @@ module Ahoy
 
     def user
       @user ||= @store.user
+    end
+
+    def visit_number
+      @store.visit_number
     end
 
     # TODO better name
