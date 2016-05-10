@@ -60,8 +60,6 @@ module Ahoy
       end
 
       def visit_number
-        p "visit_number"
-        p visit
         visit_model.where("user_id = ?", visit.user_id).count
       end
 
