@@ -85,10 +85,6 @@ module Ahoy
       @user ||= @store.user
     end
 
-    def visit_number
-      @store.visit_number
-    end
-
     # TODO better name
     def visit_properties
       @visit_properties ||= Ahoy::VisitProperties.new(request, @options.slice(:api))

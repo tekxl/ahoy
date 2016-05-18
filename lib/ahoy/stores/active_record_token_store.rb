@@ -59,10 +59,6 @@ module Ahoy
         @visit ||= visit_model.where(visit_token: ahoy.visit_token).first if ahoy.visit_token
       end
 
-      def visit_number
-        visit_model.where("user_id = ?", visit.user_id).count
-      end
-
       def exclude?
         (!Ahoy.track_bots && bot?) ||
           (

@@ -14,9 +14,6 @@ module Ahoy
       def visit
       end
 
-      def visit_number
-      end
-
       def authenticate(user)
         @user = user
         if visit && visit.respond_to?(:user) && !visit.user

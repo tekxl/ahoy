@@ -46,14 +46,6 @@ module Ahoy
         @visit ||= visit_model.where(id: ahoy.visit_id).first if ahoy.visit_id
       end
 
-      def visit_number
-        begin
-          visit_model.where(user_id: user.id).count
-        rescue
-          0
-        end
-      end
-
       protected
 
       def visit_model
